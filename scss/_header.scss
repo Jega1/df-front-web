@@ -1,0 +1,100 @@
+.header {
+  background-color: $color-grey-dark-1;
+  grid-column: col-start 5 / full-end;
+  // background-image: url(img/jj.jpg);
+  //background-size: cover;
+  //background-position: center;
+
+  padding: 2rem;
+
+  display: grid;
+  grid-template-rows: 1fr  min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmx(min-content, max-content);
+  grid-row-gap: 1.5rem;
+  padding-top: 5rem;
+  justify-content: center;
+  @media only screen and(max-width: $bp-medium) {
+    grid-column: 1/-1;
+  }
+  @media only screen and(max-width: $bp-small) {
+
+  }
+
+
+  &__logo {
+    grid-template-columns: repeat(2, 1fr);
+     grid-column: 2/ span 1;
+    height: 3rem;
+    justify-self: center;
+    font-size: 5rem;
+  }
+
+  &__seenon-text {
+    display: grid;
+    font-size: 1.6rem;
+    grid-template-columns: 1fr max-content 1fr;
+    color: $color-grey-light-2;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+    }
+  }
+  &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    img {
+      max-height: 2.5rem;
+      max-width: 100%;
+      filter: brightness(70%);
+    }
+  }
+}
+
+.btn-header {
+  align-self: start;
+  justify-self: start;
+}
+
+
+
+
+
+.section-header{
+  display: grid;
+  grid-template-rows: 40vw;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start]repeat(12, [col-start] minmax(min-content, 9.5rem) [col-end])
+    [center-end] 1fr [full-end];
+  @media only screen and(max-width: $bp-large) {
+    grid-template-rows: 70vh;
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start]repeat(
+        12,
+        [col-start] minmax(min-content, 9.5rem) [col-end]
+      )
+      [center-end] 1fr [full-end];
+  }
+
+
+  @media only screen and(max-width: $bp-medium) {
+    //  grid-template-rows: 100vh min-content min-content min-content repeat(3, min-content);
+    grid-template-rows: 60vh;
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start]repeat(
+        12,
+        [col-start] minmax(min-content, 9.5rem) [col-end]
+      )
+      [center-end] 1fr [full-end];
+  }
+}
